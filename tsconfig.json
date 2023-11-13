@@ -28,7 +28,12 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/layouts/MainLayout.tsx"
+    "app/layouts/MainLayout.tsx",
+    "app/cart/page.jsx",
+    "app/Components/TextInput.tsx",
+    "app/address/page.js",
+    "app/address/page.jsx",
+    "app/orders/page.jsx"
   ],
   "exclude": ["node_modules"]
 }
