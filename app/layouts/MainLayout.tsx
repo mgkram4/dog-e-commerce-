@@ -1,12 +1,16 @@
 "use client";
+import { ReactNode, useEffect, useState } from "react";
+import Loading from "../Components/Loading";
 import TopMenu from "./TopMenu";
 import MainHeader from "./MainHeader";
 import SubMenu from "./SubMenu";
 import Footer from "./Footer";
-import { useEffect, useState } from "react";
-import Loading from "../Components/Loading";
 
-export default function MainLayout({ children }) {
+interface MainLayoutProps {
+  children: ReactNode;
+}
+
+export default function MainLayout({ children }: MainLayoutProps) {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -14,7 +18,8 @@ export default function MainLayout({ children }) {
       let res = localStorage.getItem("isLoading");
       res === "false" ? setIsLoading(false) : setIsLoading(true);
     });
-  });
+  }, []); // Add an empty dependency array to run the effect only once
+
   return (
     <div id="MainLayout">
       <div>

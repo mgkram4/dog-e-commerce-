@@ -1,21 +1,24 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image"; // Import the Image component from Next.js
+// Import necessary modules
 import { CiDeliveryTruck } from "react-icons/ci";
+import Link from "next/link";
+import Image from "next/image";
 import MainLayout from "../layouts/MainLayout";
 
+// Define the Orders component
 export default function Orders() {
+  // Sample orders data
   const orders = [
     {
       id: 1,
-      stripe_id: "12121212",
+      stripe_id: 12121212,
       name: "test",
       address: "test",
       zipcode: "test",
       city: "test",
       country: "test",
-      total: "test",
+      total: 0,
       orderItem: [
         {
           id: 1,
@@ -26,6 +29,7 @@ export default function Orders() {
     },
   ];
 
+  // Render the component
   return (
     <MainLayout>
       <div className="mt-4 max-w-[1200px] mx-auto px-2 min-h-[50vh]">
@@ -65,14 +69,15 @@ export default function Orders() {
                     <div key={item.id} className="flex items-center">
                       <Link
                         href="#"
+                        // Change the href value to an appropriate link or an empty string
                         className="py-1 hover:underline text-blue-500 font-bold"
                       >
                         <Image
                           className="rounded"
-                          width={120} // Use curly braces for dynamic values
-                          height={120} // Add height for the Image component
+                          width={120}
+                          height={120}
                           src={item.src}
-                          alt={item.title} // Add alt attribute
+                          alt={item.title}
                         />
                         {item.title}
                       </Link>

@@ -2,8 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import ProductType from "./ProductType";
 
-export default function Product({ product }) {
+interface ProductProps {
+  product: ProductType;
+}
+
+const Product: React.FC<ProductProps> = ({ product }) => {
   return (
     <div className="max-w-[200px] p-1.5 border border-gray-50 hover:border-gray-200 hover:shadow-xl">
       <Link href={`/product/${product.id}`} className="block">
@@ -38,4 +43,5 @@ export default function Product({ product }) {
       </div>
     </div>
   );
-}
+};
+export default Product;

@@ -1,8 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
-export default function ClientOnly({ children }) {
+interface ClientOnlyProps {
+  children: ReactNode;
+}
+
+export default function ClientOnly({ children }: ClientOnlyProps) {
   const [isClient, setIsClient] = useState(false);
   useEffect(() => setIsClient(true));
 

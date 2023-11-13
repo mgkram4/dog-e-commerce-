@@ -12,6 +12,7 @@ export default function Checkout() {
     src: "/dog.jpg",
     price: 2999, // Price in cents (2999 cents = $29.99)
     description: "Cozy pet bed for your furry friend's comfort.",
+    created_at: new Date(), // Add the created_at property with a Date value
   };
 
   return (
